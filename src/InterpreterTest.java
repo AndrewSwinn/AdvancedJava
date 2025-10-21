@@ -15,5 +15,9 @@ public class InterpreterTest {
         BooleanLiteral bool = new BooleanLiteral(true);
         Variable       var  = new Variable("x");
 
+        BinaryOperation x = new BinaryOperation(test, "+", test);
+
+        IO.println(x.interpret(env));
+
     }
 }
