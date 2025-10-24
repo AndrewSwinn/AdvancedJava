@@ -1,9 +1,8 @@
-import java.util.HashMap;
 import java.util.Map;
 
 public class InterpreterTest {
     public static void main(String[] args) {
-        IO.println(String.format("Hello and welcome!"));
+        System.out.println(String.format("Hello and welcome!"));
 
         //Create environemnt : x = -10, y = 20, flag = true
         Map<String, Object> env = Map.of(
@@ -29,7 +28,7 @@ public class InterpreterTest {
         System.out.println(" Interpreter result : " + result1);
 
 
-        IO.println(x.interpret(env));
+        System.out.println(x.interpret(env));
 
     }
 }
