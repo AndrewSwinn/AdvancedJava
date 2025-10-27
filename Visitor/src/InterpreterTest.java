@@ -1,6 +1,7 @@
 import java.util.Map;
 
 public class InterpreterTest {
+
     public static void main(String[] args) {
 
 // Create environment : x = −10, y = 20 ,
@@ -14,12 +15,20 @@ public class InterpreterTest {
                 new BinaryOperation(new Variable("x"), "+", new Variable("y")),
                     new BinaryOperation(new Variable("x"), "−", new  Variable("y")));
 
+        NumberLiteral five =  new NumberLiteral(5);
+        Variable var = new Variable("x");
 
         EvaluationVisitor visitor = new EvaluationVisitor(env);
+        VariableCollector collector = new VariableCollector(env);
+
+        Object result1 = five.accept(visitor);
 
         Object result2 = testExpr.accept(visitor); // Visitor pattern
+        Object collect = var.accept(collector);
 
-        System.out.println(" Visitor result : " + result2);
+        System.out.println(" Visitor result1 : " + result1);
+        System.out.println(" Visitor result2 : " + result2);
+        System.out.println(" Collector result2 : " + collect);
 
     }
 }

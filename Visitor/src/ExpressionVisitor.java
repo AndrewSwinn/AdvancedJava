@@ -1,6 +1,3 @@
-import java.util.Map;
-import java.util.HashMap;
-
 // Visitor interface
 public interface ExpressionVisitor<T> {
     T visit(NumberLiteral number);

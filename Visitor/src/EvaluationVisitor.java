@@ -2,15 +2,17 @@ import java.util.Map;
 
 // Evaluation Visitor
 public class EvaluationVisitor implements ExpressionVisitor<Object> {
+
     private final Map<String, Object> environment;
 
     public EvaluationVisitor(Map<String, Object> environment) {
+
         this.environment = environment;
     }
 
     @Override
     public Object visit(NumberLiteral number) {
-        return number.getValue();
+       return number.getValue();
     }
 
     @Override
